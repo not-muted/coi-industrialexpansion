@@ -75,17 +75,17 @@ namespace IndustrialExpansion.Helper.CargoShipDryDock
             reader.SetField<CargoShipDryDockManager>(this, "m_simLoopEvents", reader.ReadGenericAs<ISimLoopEvents>());
         }
 
-        public Option<IProductBuffer> GetBuffer(ProductProto product, Option<IEntity> entity)
+        public Option<IPlainProductBuffer> GetBuffer(ProductProto product, Option<IEntity> entity)
         {
             bool flag = product == this.m_cargoShip;
-            Option<IProductBuffer> option;
+            Option<IPlainProductBuffer> option;
             if (flag)
             {
                 option = this.m_cargoShipBuffer;
             }
             else
             {
-                option = Option<IProductBuffer>.None;
+                option = Option<IPlainProductBuffer>.None;
             }
             return option;
         }
